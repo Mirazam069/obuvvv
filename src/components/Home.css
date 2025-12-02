@@ -69,7 +69,6 @@ body {
   position: relative;
   width: 100%;
   aspect-ratio: 4 / 3; /* 4:3 nisbatda */
-  background: #f3f3f3;
   overflow: hidden;
 }
 
@@ -79,6 +78,7 @@ body {
   object-fit: cover;
   display: block;
   transition: transform 0.35s ease;
+  border-radius: 15px;
 }
 
 .product-card:hover .product-image {

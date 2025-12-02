@@ -8,6 +8,20 @@
   <title>OBUVVV</title>
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <script>
+    fetch("src/assets/icon.svg")
+      .then(res => res.text())
+      .then(svg => {
+        // fill rangini oq (#fff) qilib o‘zgartiramiz
+        const whiteSvg = svg
+          .replace(/fill="[^"]*"/g, 'fill="#fff"')
+          .replace(/stroke="[^"]*"/g, 'stroke="#fff"');
+
+        const blob = new Blob([whiteSvg], { type: "image/svg+xml" });
+        const url = URL.createObjectURL(blob);
+        document.getElementById("icon").href = url;
+      });
+  </script>
 
 </head>
 
