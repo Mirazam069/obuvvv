@@ -1,0 +1,18 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'DMSans';
+}
+@font-face {
+    font-family: 'DMSans';
+    src: url('assets/static/DMSans-Regular.ttf');
+    font-weight: 400;
+}
+
+#icon{
+    color: #fff;
+    background-color: #fff;
+}

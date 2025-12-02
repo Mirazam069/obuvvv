@@ -1,0 +1,323 @@
+/* Asosiy sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+
+  width: 260px;
+  background: #ffffff;
+  border-right: 1px solid #eeeeee;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding: 32px 40px;
+  box-sizing: border-box;
+  z-index: 100;
+
+  /* Home cardlardagi kabi yumshoq jonlilik */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+body {
+  font-family: "DMSans";
+}
+
+/* Logo */
+.sidebar-logo {
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-decoration: none;
+  color: #000000;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+
+  transition: transform 0.2s ease, letter-spacing 0.2s ease;
+}
+
+.sidebar-logo:hover {
+  transform: translateY(-1px);
+  letter-spacing: 1.5px;
+}
+
+/* Menu */
+.sidebar-nav {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.nav-link {
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 0.09em;
+
+  color: #555555;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+/* Pastda ingichka underline animatsiyasi */
+/* .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 1px;
+  background: #000000;
+  transition: width 0.25s ease;
+} */
+
+/* Active (HOME) */
+.nav-link.active {
+  color: #000000;
+  font-weight: 600;
+}
+
+/* Active oldidagi qora nuqta */
+/* .nav-link.active::before {
+  content: "";
+  position: absolute;
+  left: -16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #000000;
+} */
+
+/* Active va hover holatda underline ko'rinadi */
+.nav-link.active::after,
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Hover efekti */
+.nav-link:hover {
+  color: #000000;
+  transform: translateX(2px);
+}
+
+/* Pastki qism – qora panel + cart */
+.sidebar-bottom {
+  margin: 0 -40px -32px;
+  padding: 16px 40px;
+  background: #000000;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  /* biroz jonlantirish */
+  box-shadow: 0 -10px 25px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.sidebar-bottom:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 -16px 35px rgba(0, 0, 0, 0.35);
+}
+
+.cart-icon {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 1px solid #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 14px;
+  color: #ffffff;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.sidebar-bottom:hover .cart-icon {
+  transform: translateY(-1px) scale(1.06);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.cart-count {
+  color: #ffffff;
+  font-size: 14px;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.sidebar-bottom:hover .cart-count {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+.cart-icon{
+  padding: 5px;
+  font-size: 12px;
+}
+
+/* Hamburger tugma – defaultda yashirin (faqat desktopda kerak emas) */
+.sidebar-burger {
+  display: none;
+  position: relative;
+  width: 28px;
+  height: 22px;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+
+.sidebar-burger span {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  border-radius: 999px;
+  background: #000000;
+  transition: transform 0.2s ease, opacity 0.2s ease, top 0.2s ease,
+    bottom 0.2s ease;
+}
+
+.sidebar-burger span:first-child {
+  top: 4px;
+}
+
+.sidebar-burger span:last-child {
+  bottom: 4px;
+}
+
+/* Burger ochilganda X bo'lib qolishi */
+.sidebar-burger.open span:first-child {
+  top: 10px;
+  transform: rotate(45deg);
+}
+
+.sidebar-burger.open span:last-child {
+  bottom: 10px;
+  transform: rotate(-45deg);
+}
+
+/* Kichik ekranlarda biroz toraytirib qo'yamiz */
+@media (max-width: 900px) {
+  .sidebar {
+    width: 220px;
+    padding: 24px 28px;
+  }
+
+  .sidebar-bottom {
+    margin: 0 -28px -24px;
+    padding: 14px 28px;
+  }
+}
+
+/* 🔻 768px dan kichik – tepaga navbar + fullscreen menyu */
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: auto;
+
+    width: 100%;
+    height: 64px;
+
+    border-right: none;
+    border-bottom: 1px solid #eeeeee;
+
+    padding: 10px 16px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+  }
+
+  .sidebar-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .sidebar-logo {
+    font-size: 22px;
+  }
+
+  /* NAV – defaultda yashirin, burger ochilganda fullscreen bo'ladi */
+  .sidebar-nav {
+    position: fixed;
+    top: 64px; /* navbar balandligi */
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #ffffff;
+    display: none; /* menu yopiq bo'lganda ko'rinmasin */
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+
+    margin-top: 0;
+    z-index: 999;
+  }
+
+  .sidebar.menu-open .sidebar-nav {
+    display: flex;
+  }
+
+  .nav-link {
+    font-size: 14px;
+    letter-spacing: 0.08em;
+  }
+
+  /* Mobilga nuqta kerak emas */
+  .nav-link.active::before {
+    display: none;
+  }
+
+  /* Mobil underline ham chiroyli ko'rinadi */
+  .nav-link::after {
+    bottom: -10px;
+  }
+
+  /* Burger ko'rinadigan bo'ladi */
+  .sidebar-burger {
+    display: block;
+    margin-right: 30px;
+  }
+
+  /* Pastki qism – faqat ikonka, fon transparent */
+  .sidebar-bottom {
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .cart-icon {
+    border-color: #000000;
+    color: #000000;
+  }
+
+  .cart-count {
+    color: #000000;
+    font-size: 13px;
+  }
+}
+
+/* Juda kichik ekranlar (400–480px) uchun biroz moslashuv */
+@media (max-width: 480px) {
+  .nav-link {
+    font-size: 13px;
+  }
+}
