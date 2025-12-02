@@ -321,3 +321,117 @@ body {
     font-size: 13px;
   }
 }
+
+
+
+
+
+
+/* --------------------------------------------------
+   PREMIUM LANGUAGE SWITCHER — CLEAN, MODERN, LUXURY
+-------------------------------------------------- */
+.sidebar-lang {
+  margin-top: 26px;
+  padding-top: 18px;
+  border-top: 1px solid #f1f1f1;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+}
+
+.sidebar-lang:hover {
+  opacity: 1;
+}
+
+/* ICON — tiny, subtle, luxury feel */
+.lang-icon {
+  font-size: 19px;
+  opacity: 0.55;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.sidebar-lang:hover .lang-icon {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+
+/* SELECT WRAPPER — like capsule button */
+.lang-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+
+  border: 1px solid #e7e7e7;
+  border-radius: 8px;
+  padding: 6px 12px;
+  background: #fff;
+
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.lang-wrapper:hover {
+  border-color: #cfcfcf;
+}
+
+.lang-wrapper:focus-within {
+  border-color: #000;
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.12);
+}
+
+/* SELECT — minimal clean */
+.lang-select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  border: none;
+  background: transparent;
+  font-size: 13px;
+  color: #333;
+
+  padding-right: 20px;
+  cursor: pointer;
+  outline: none;
+}
+
+/* CUSTOM ARROW — thin, minimal */
+.lang-wrapper::after {
+  content: "";
+  position: absolute;
+  right: 10px;
+  width: 7px;
+  height: 7px;
+    no-repeat center / contain;
+
+  background: #555;
+  opacity: 0.7;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.lang-wrapper:hover::after {
+  opacity: 1;
+  transform: translateY(1px);
+}
+
+/* OPTION COLORS — cleaner on open */
+.lang-select option {
+  padding: 10px;
+  font-size: 14px;
+  background: #fff;
+  color: #333;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .lang-wrapper {
+    padding: 8px 14px;
+  }
+
+  .lang-select {
+    font-size: 15px;
+  }
+}

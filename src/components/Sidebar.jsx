@@ -6,7 +6,6 @@ export default function Sidebar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleNavClick = () => {
-    // Link bosilganda mobil menyuni yopamiz
     setIsMenuOpen(false);
   };
 
@@ -14,25 +13,38 @@ export default function Sidebar() {
     <aside className={`sidebar ${isMenuOpen ? "menu-open" : ""}`}>
       {/* TOP – LOGO + MENU + BURGER */}
       <div className="sidebar-top">
-        {/* Logo */}
         <a href="/" className="sidebar-logo">
           OBUVVV
         </a>
 
-        {/* NAV – desktop + mobil fullscreen menyu */}
+        {/* NAV */}
         <nav className="sidebar-nav">
           <a href="#" className="nav-link active" onClick={handleNavClick}>
             Bosh sahifa
           </a>
           <a href="#" className="nav-link" onClick={handleNavClick}>
-            Barcha mahsulotlar
+            Texnik yordam
           </a>
           <a href="#" className="nav-link" onClick={handleNavClick}>
             Do'kon
           </a>
+
+          {/* 🔥 TIL TANLASH QISMI */}
+          <div className="sidebar-lang">
+  <ion-icon name="language-outline" class="lang-icon"></ion-icon>
+
+  <div className="lang-wrapper">
+    <select className="lang-select">
+      <option value="uz">UZB</option>
+      <option value="ru">РУС</option>
+      <option value="en">ENG</option>
+    </select>
+  </div>
+</div>
+
         </nav>
 
-        {/* Hamburger – faqat mobilda ko'rinadi */}
+        {/* BURGER */}
         <button
           type="button"
           className={`sidebar-burger ${isMenuOpen ? "open" : ""}`}
@@ -46,10 +58,7 @@ export default function Sidebar() {
 
       {/* BOTTOM – CART */}
       <div className="sidebar-bottom">
-        <ion-icon
-                      name="cart-outline"
-                      className="cart-icon"
-                    ></ion-icon>
+        <ion-icon name="cart-outline" class="cart-icon"></ion-icon>
         <span className="cart-count">0</span>
       </div>
     </aside>
