@@ -239,3 +239,19 @@ body {
   transform: translateY(-1px);
   background: #f5f5f5;
 }
+
+
+/* global.css yoki App.css ichida */
+ion-icon {
+  color: #000;       /* hamma ion-icon default qora bo‘ladi */
+}
+
+/* Agar ayrim iconlar oq bo‘lishi kerak bo‘lsa (masalan, qora paneldagi savat) */
+.cart-icon {
+  color: #000;       /* yoki #fff – qaysi joyda oq bo‘lishi kerak bo‘lsa */
+}
+
+/* Yurakcha icon, mahsulot kartasidagi sevimli tugma */
+.product-like-btn ion-icon {
+  color: #000;       /* kulrang/qora */
+}
