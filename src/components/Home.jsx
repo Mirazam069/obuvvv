@@ -2,10 +2,11 @@
 import { useState } from "react";
 import "./Home.css";
 import image1 from "../assets/image1.jpg";
-import img1 from "../assets/img1.png";
-import img2 from "../assets/img2.png";
-import img3 from "../assets/img3.png";
-import img4 from "../assets/img4.png";
+import img1 from "../assets/img1.PNG";
+import img2 from "../assets/img2.PNG";
+import img3 from "../assets/img3.PNG";
+import img4 from "../assets/img4.PNG";
+
 
 const PRODUCTS = [
   {
