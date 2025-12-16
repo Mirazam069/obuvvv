@@ -37,6 +37,13 @@ body {
   gap: 40px;
 }
 
+/* 👇 YANGI: cardni o'rab turgan <a> uchun */
+.product-card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
 /* Card */
 .product-card {
   background: #ffffff;
@@ -106,7 +113,7 @@ body {
 
   transition: transform 0.2s ease, box-shadow 0.2s ease,
     background 0.2s ease, color 0.2s ease;
-    color: #000;
+  color: #000;
 }
 
 /* LIKE bosilganda qizarishi */
@@ -174,7 +181,7 @@ body {
   transition: background 0.2s ease, transform 0.2s ease;
 }
 
-/* Uzum rasmi */
+/* Uzum rasmi / icon */
 .product-cart-icon {
   width: 18px;
   height: 18px;
@@ -216,7 +223,6 @@ body {
   }
 }
 
-
 .product-cart-btn {
   width: 32px;
   height: 32px;
@@ -232,7 +238,7 @@ body {
 
 /* Ionicon savat ikonkasi */
 .product-cart-icon {
-  font-size: 18px;  /* icon o‘lchami */
+  font-size: 18px; /* icon o‘lchami */
 }
 
 /* Hover effekti */
@@ -241,18 +247,17 @@ body {
   background: #f5f5f5;
 }
 
-
 /* global.css yoki App.css ichida */
 ion-icon {
-  color: #000;       /* hamma ion-icon default qora bo‘ladi */
+  color: #000; /* hamma ion-icon default qora bo‘ladi */
 }
 
 /* Agar ayrim iconlar oq bo‘lishi kerak bo‘lsa (masalan, qora paneldagi savat) */
 .cart-icon {
-  color: #000;       /* yoki #fff – qaysi joyda oq bo‘lishi kerak bo‘lsa */
+  color: #000; /* yoki #fff – qaysi joyda oq bo‘lishi kerak bo‘lsa */
 }
 
 /* Yurakcha icon, mahsulot kartasidagi sevimli tugma */
 .product-like-btn ion-icon {
-  color: #000;       /* kulrang/qora */
+  color: #000; /* kulrang/qora */
 }

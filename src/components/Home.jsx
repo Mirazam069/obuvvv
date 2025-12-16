@@ -6,7 +6,10 @@ import img1 from "../assets/img1.PNG";
 import img2 from "../assets/img2.PNG";
 import img3 from "../assets/img3.PNG";
 import img4 from "../assets/img4.PNG";
-
+import img5 from "../assets/img5.jpg";
+import img6 from "../assets/img6.PNG";
+import img7 from "../assets/img7.PNG";
+import img8 from "../assets/img8.PNG";
 
 const PRODUCTS = [
   {
@@ -16,6 +19,7 @@ const PRODUCTS = [
     category: "Oyoq kiyim",
     price: 420000,
     image: img1,
+    url: "https://uzum.uz/ru/product/shampun-dlya-volos-9122?skuId=11943",
   },
   {
     id: 2,
@@ -24,6 +28,7 @@ const PRODUCTS = [
     category: "Krossovka",
     price: 420000,
     image: img2,
+    url: "https://uzum.uz/ru/product/shampun-dlya-volos-9122?skuId=11943", // keyinchalik alohida link qo'yasan
   },
   {
     id: 3,
@@ -32,6 +37,7 @@ const PRODUCTS = [
     category: "Krossovka",
     price: 420000,
     image: img3,
+    url: "https://uzum.uz/ru/product/shampun-dlya-volos-9122?skuId=11943",
   },
   {
     id: 4,
@@ -40,6 +46,7 @@ const PRODUCTS = [
     category: "Krossovka",
     price: 420000,
     image: img4,
+    url: "https://uzum.uz/ru/product/shampun-dlya-volos-9122?skuId=11943",
   },
   {
     id: 5,
@@ -47,31 +54,35 @@ const PRODUCTS = [
     name: "Qizil classic model",
     category: "Oyoq kiyim",
     price: 420000,
-    image: image1,
+    image: img5,
+    url: "https://uzum.uz/ru/product/shampun-dlya-volos-9122?skuId=11943",
   },
   {
     id: 6,
-    brand: "NIKE",
-    name: "Oq minimal krossovka",
+    brand: "Ayollar uchun",
+    name: "Ayollar uchun qishki oyoq kiyimlar",
     category: "Oyoq kiyim",
-    price: 420000,
-    image: image1,
+    price: 170100,
+    image: img6,
+    url: "https://uzum.uz/uz/product/ayollar-uchun-qishki-oyoq-kiyimlar-mango---117-2088908?skuId=7468880",
   },
   {
     id: 7,
-    brand: "NIKE",
-    name: "Ko‘k yugurish krossovkasi",
-    category: "Krossovka",
-    price: 420000,
-    image: image1,
+    brand: "Ayollar uchun",
+    name: "Ayollar uchun qishki oyoq kiyimlar",
+    category: "Oyoq kiyim",
+    price: 170100,
+    image: img7,
+    url: "https://uzum.uz/uz/product/ayollar-uchun-qishki-oyoq-kiyimlar-mango---117-2088908?skuId=7468880",
   },
   {
     id: 8,
-    brand: "NIKE",
-    name: "Kulrang kundalik model",
+    brand: "Ayollar uchun",
+    name: "Ayollar uchun qishki oyoq kiyimlar",
     category: "Oyoq kiyim",
-    price: 420000,
-    image: image1,
+    price: 170100,
+    image: img8,
+    url: "https://uzum.uz/uz/product/ayollar-uchun-qishki-oyoq-kiyimlar-mango---117-2088908?skuId=7468880",
   },
 ];
 
@@ -90,7 +101,7 @@ export default function Home() {
       <div className="home-header">
         <h1 className="home-title">Krossovkalar va oyoq kiyimlar</h1>
         <p className="home-subtitle">
-          Har kuni yangilanadigan krossovkalar kolleksiyasi
+          Har kuni yangilanadigan krossovkalar kolleksiyasi 
         </p>
       </div>
 
@@ -99,41 +110,61 @@ export default function Home() {
           const isLiked = likedIds.includes(item.id);
 
           return (
-            <article key={item.id} className="product-card">
-              <div className="product-image-wrapper">
-                <img
-                  src={item.image}
-                  alt={item.name}
-                  className="product-image"
-                />
+            <a
+              key={item.id}
+              href={item.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="product-card-link"
+            >
+              <article className="product-card">
+                <div className="product-image-wrapper">
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    className="product-image"
+                  />
 
-                <button
-                  className={`product-like-btn ${isLiked ? "liked" : ""}`}
-                  type="button"
-                  onClick={() => toggleLike(item.id)}
-                >
-                  {isLiked ? "♥" : "♡"}
-                </button>
-              </div>
-
-              <div className="product-info">
-                <span className="product-brand">{item.brand}</span>
-                <h2 className="product-name">{item.name}</h2>
-                <span className="product-category">{item.category}</span>
-
-                <div className="product-bottom">
-                  <span className="product-price">
-                    {item.price.toLocaleString("uz-UZ")} so&apos;m
-                  </span>
-                  <button className="product-cart-btn" type="button">
-                    <ion-icon
-                      name="cart-outline"
-                      className="product-cart-icon"
-                    ></ion-icon>
+                  <button
+                    className={`product-like-btn ${isLiked ? "liked" : ""}`}
+                    type="button"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      toggleLike(item.id);
+                    }}
+                  >
+                    {isLiked ? "♥" : "♡"}
                   </button>
                 </div>
-              </div>
-            </article>
+
+                <div className="product-info">
+                  <span className="product-brand">{item.brand}</span>
+                  <h2 className="product-name">{item.name}</h2>
+                  <span className="product-category">{item.category}</span>
+
+                  <div className="product-bottom">
+                    <span className="product-price">
+                      {item.price.toLocaleString("uz-UZ")} so&apos;m
+                    </span>
+                    <button
+                      className="product-cart-btn"
+                      type="button"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        // bu yerda xohlasang alohida savat logikasini qo'shasan
+                      }}
+                    >
+                      <ion-icon
+                        name="cart-outline"
+                        className="product-cart-icon"
+                      ></ion-icon>
+                    </button>
+                  </div>
+                </div>
+              </article>
+            </a>
           );
         })}
       </section>
